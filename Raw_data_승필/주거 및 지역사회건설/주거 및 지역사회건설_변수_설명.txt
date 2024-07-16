@@ -1,0 +1,22 @@
+주거 및 지역사회건설 (9개 변수)
+
+1. 운전행태영역, 교통안전영역, 보행행태영역 
+   - 구분 : 시도, 시군구, 년별, 2015-2023
+   - 출처 : https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL20331&conn_path=I3
+   - 하위지표
+     *- 출처 : https://www.ktdb.go.kr/www/selectBbsNttView.do?key=42&bbsNo=7&nttNo=479
+     *- 운전행태영역 : 횡단보도 정지선 준수율, 안전띠 착용률, 신호 준수율, 방향지시등 점등률, 이륜차 승차자 안전모 착용률 - https://www.ktdb.go.kr/www/selectBbsNttView.do?key=42&bbsNo=7&nttNo=479
+     *- 교통안전영역 : 자동차 1만대당 교통사고 사고건수, 인구 10만명당 교통사고 사고건수, 자동차 1만대당 교통사고 사망자수, 인구 10만명당 교통사고 사망자수, 인구 10만명당 보행자 중 교통사고 사망자수 - https://www.ktdb.go.kr/www/selectBbsNttView.do?key=42&bbsNo=7&nttNo=479
+     *- 보행행태영역 : 보행자 횡단보도 신호 준수율 - 보행자 횡단보도 신호 준수율
+
+2. 1인당 자동차등록대수
+   - 구분 : 시도, 년별, 2015-2023
+   - 출처 : https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL20731&conn_path=I3
+
+3. 도시지역면적
+   - 구분 : 시도, 년별, 2015-2022
+   - 출처 : https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL21291E&conn_path=I3
+
+4. 주택 수
+   - 구분 : 시도, 년별, 2015-2022
+   - 출처 : https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=INH_1JU1501&conn_path=I3
