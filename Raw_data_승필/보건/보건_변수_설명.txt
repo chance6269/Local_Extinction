@@ -1,0 +1,13 @@
+보건 (12개 변수)
+
+1. 병원 수, 보건소 수, 상급종합병원 수, 약국 수, 요양병원 수, 의원 수, 종합병원 수, 치과병원 수, 한방병원 수
+   - 구분 : 시도, 년별, 2015-2022
+   - 출처 : https://kosis.kr/statHtml/statHtml.do?orgId=350&tblId=TX_35003_A002&conn_path=I3
+
+2. 천 명 당 의료기관병상수, 총 병상 수
+   - 구분 : 시도, 년별, 2015-2022
+   - 출처 : https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL20971&conn_path=I3
+
+3. 보건분야예산액
+   - 구분 : 전국, 년별, 2015-2024
+   - 출처 : https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1404
