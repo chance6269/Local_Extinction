@@ -29,5 +29,5 @@ new_ep = ext_df ** 2 + log_df
 
 # %%
 # 파일 저장
-new_ep.to_csv('개선 소멸지수_2015-2023.csv')
-new_ep.to_excel('개선 소멸지수_2015-2023.xlsx')
+new_ep.to_csv('개선_소멸위험지수_2015-2023.csv')
+new_ep.to_excel('개선_소멸위험지수_2015-2023.xlsx')
