@@ -96,34 +96,32 @@ df3.info()
 # 사라진 시군구 행 제거
 
 df4 = df3.set_index('행정구역(시군구)별')
-df4 = df4.dropna(axis=0, how='all')
+df4 = df4.loc[~(df4.iloc[:, 1:] == 0).all(axis=1)]
+
+# %%
+# 전입, 전출 따로 분리하여 각각 데이터프레임으로 만들기
+
+# 전입 데이터프레임
+df_in = df4.filter(regex=r'^\d+$')
+
+# 전출 데이터프레임
+df_out = df4.filter(regex=r'^\d+\.\d+$')
     
+# 서브 헤더행 제거
+df_in = df_in.iloc[1:, :]
+df_out = df_out.iloc[1:, :]
+
+# 전출 데이터 전입 데이터와 똑같이 열 이름 바꿔주기
+df_out.columns = df_in.columns
 # %%
-'''가임기 여성 데이터 전처리'''
-# '5세별' 열에서 특정 연령대에 해당하는 데이터 필터링
-age_woman = ['15 - 19세', '20 - 24세', '25 - 29세', '30 - 34세', '35 - 39세', '40 - 44세', '45 - 49세']
+import numpy as np
+# log(전입 / 전출)
+df_mov_var = df_in / df_out
 
-# 가임기 여성인구 필터링
-df_filtered = df3[df3['5세별'].isin(age_woman)]
-woman_df = df_filtered[df_filtered['항목'] == '여자인구수[명]']
-woman_df.drop(columns=['항목', '5세별'], inplace=True)
-
-# 행정구역별 합계 계산
-woman_df_grouped = woman_df.groupby('행정구역(동읍면)별').sum()
+log_df_mov = np.log(df_mov_var.astype(float))
 
 # %%
-'''65세 이상 노인인구 데이터 전처리'''
-# 
-oldman_df = df3[~df3['5세별'].isin(age_woman)]
-oldman_df.drop(columns=['항목', '5세별'], inplace=True)
-
-# 행정구역별 합계 계산
-oldman_df_grouped = oldman_df.groupby('행정구역(동읍면)별').sum()
-# %%
-'''지역별 소멸위험지수 계산'''
-ext_point = woman_df_grouped / oldman_df_grouped 
-
 # 엑셀파일 저장
-ext_point.to_excel("기존_소멸위험지수_2015-2023.xlsx")
+log_df_mov.to_excel("전입전출_log처리_2015-2023.xlsx")
 # csv
-ext_point.to_csv("기존_소멸위험지수_2015-2023.csv")
+log_df_mov.to_csv("전입전출_log처리_2015-2023.csv")
