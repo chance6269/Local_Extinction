@@ -31,7 +31,6 @@ df.info()
 # %%
 
 # 마지막 열 제거, 필요없는 열 제거
-df = df[df['항목'] != '남자인구수[명]']
 df = df.iloc[:,:-1]
 df = df.drop(columns='단위')
 
@@ -39,6 +38,9 @@ df = df.drop(columns='단위')
 df['행정구역(동읍면)별'].unique()
 
 # 필요없는 행 제거
+df = df[df['행정구역(동읍면)별'] != '전국']
+df = df[df['항목'] != '남자인구수[명]']
+
 df = df[df['행정구역(동읍면)별'] != '북부출장소']
 df = df[df['행정구역(동읍면)별'] != '동해출장소']
 df.info()
@@ -127,10 +129,14 @@ oldman_df.drop(columns=['항목', '5세별'], inplace=True)
 
 # 행정구역별 합계 계산
 oldman_df_grouped = oldman_df.groupby('행정구역(동읍면)별').sum()
+
 # %%
 '''지역별 소멸위험지수 계산'''
 ext_point = woman_df_grouped / oldman_df_grouped 
+# '전국'데이터 제거
 
+
+# %%
 # 엑셀파일 저장
 ext_point.to_excel("기존_소멸위험지수_2015-2023.xlsx")
 # csv

@@ -22,7 +22,8 @@ df['행정구역(시군구)별'].unique()
 df['행정구역(시군구)별'] = df['행정구역(시군구)별'].str.replace('\u3000', '')
 df['행정구역(시군구)별'] = df['행정구역(시군구)별'].str.replace('  ', '')
 
-# 필요없는 행 제거
+# 중복 행 제거
+df = df.drop_duplicates()
 
 df.info()
 # %%
