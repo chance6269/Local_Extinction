@@ -7,10 +7,10 @@ Created on Sun Jul 21 12:45:49 2024
 import pandas as pd
 
 # 기존소멸지수 데이터 로드
-ext_df = pd.read_csv('기존_소멸위험지수_2015-2023.csv')
+ext_df = pd.read_csv('./preprocessed/기존_소멸위험지수_2015-2023.csv')
 
 # log(전입/전출) 데이터 로드
-log_df = pd.read_csv('전입전출_log처리_2015-2023.csv')
+log_df = pd.read_csv('./preprocessed/전입전출_log처리_2015-2023.csv')
 
 
 '''개선 소멸지수 데이터 생성'''
@@ -42,8 +42,8 @@ new_ep = new_ep.loc[:,'행정구역':'2021']
 
 # %%
 # 파일 저장
-new_ep.to_csv('개선_소멸위험지수_2015-2023.csv')
-new_ep.to_excel('개선_소멸위험지수_2015-2023.xlsx')
+new_ep.to_csv('./preprocessed/개선_소멸위험지수_2015-2021.csv')
+new_ep.to_excel('./preprocessed/개선_소멸위험지수_2015-2021.xlsx')
 
 # %%
 '''소멸 위험 등급 나누기'''
@@ -77,9 +77,13 @@ def assign_grade(value):
     else:
         return 'D'
     
-    # 소멸위험등급 열 추가
+# 소멸위험등급 열 추가
 df_long['소멸위험등급'] = df_long['소멸위험지수'].apply(assign_grade)
 
+# %%
+# 파일로 저장
+df_long.to_csv('./preprocessed/소멸위험등급_2015-2021.csv')
+df_long.to_excel('./preprocessed/소멸위험등급_2015-2021.xlsx')
 
 # %%
 # D등급(소멸위험 지역) 추출
