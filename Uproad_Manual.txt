@@ -1,0 +1,14 @@
+1. git 업로드 시간
+
+	- 평일 : 오전 8:30 ~ 오후 4:25
+	
+	- 주말 : 오전 0:00 ~ 오후 11:59
+	
+
+2. 디렉토리별로 구분하여 업로드
+
+	- Code : /codes
+	
+	- Preprocessed Data : /preprocessed
+	
+	- Raw Data : /Raw_Data
