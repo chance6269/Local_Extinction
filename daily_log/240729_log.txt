@@ -1,0 +1,19 @@
+2024년 7월 29일 (월) Daily Log
+
+(주찬)
+	- 진행현황
+		* 전처리 :
+			- Label Encoding : 소멸위험등급(A ~ D -> 0 ~ 3)
+				
+		* 모델 구축 :
+		
+			1) LGBM
+				- RandomizedSearchCV 모듈로 하이퍼 파라미터 튜닝
+			2) XGBoost
+				- RandomizedSearchCV 모듈로 하이퍼 파라미터 튜닝
+					
+	- 진행계획
+		* 서비스 구축
+			
+			- streamlit에 샘플 모델 탑재
+		
